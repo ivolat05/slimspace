@@ -1,0 +1,121 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: 'Jost', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	transition: .4s;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: none;
+	padding: 0;
+	transition: .4s;
+}
+
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	scrollbar-gutter: stable;
+
+	&._fixed {
+		overflow: hidden;
+	}
+
+}
+
+.page {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+	overflow: hidden;
+}
+
+
+/* убираем тени safari */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+.container {
+	width: 100%;
+	max-width: 100%;
+
+}
+
+time {
+	display: block;
+}
+
+* {
+	&::-webkit-scrollbar-thumb {
+		width: 4px;
+		border-radius: 10px;
+		background: #0faeff;
+		cursor: grab;
+	}
+
+	&::-webkit-scrollbar {
+		width: 4px;
+		border-radius: 10px;
+		background: rgba(32, 76, 175, 0.05);
+	}
+}
+
+body {
+	&::-webkit-scrollbar-thumb {
+		width: 10px;
+		border-radius: 10px;
+		background: #0faeff;
+		cursor: grab;
+	}
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		border-radius: 10px;
+		background: rgba(32, 76, 175, 0.05);
+	}
+}
+
+@-moz-document url-prefix() {
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: #0faeff rgba(32, 76, 175, 0.05);
+
+		&::-webkit-scrollbar-thumb {
+			width: 4px;
+			background: #0faeff;
+			border-radius: 10px;
+		}
+
+		&::-webkit-scrollbar {
+			width: 4px;
+			background: rgba(32, 76, 175, 0.05);
+		}
+
+		&::-moz-scrollbar {
+			width: 4px;
+		}
+
+		.scrollable-content::-moz-scrollbar-thumb {
+			background: #0faeff;
+			border-radius: 10px;
+		}
+	}
+}
