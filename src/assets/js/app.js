@@ -14,3 +14,4 @@
 // components
 --include('components/mask-phone.js')
 --include('components/animation.js')
+--include('swipers/swiper.js')

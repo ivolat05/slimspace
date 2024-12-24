@@ -52,18 +52,18 @@ function paralaxAnimation(
 
 // main animation
 
-const trigerMain = document.querySelector(".main__row");
-const mainBox = document.querySelectorAll(".main__row-box");
-if (trigerMain && mainBox) {
-	const mainAnimategroup = gsap.timeline({
+const trigerAdvantage = document.querySelector(".advantage__row");
+const advantageBoxAnimate = document.querySelectorAll(".advantage__box");
+if (trigerAdvantage && advantageBoxAnimate) {
+	const advantageAnimategroup = gsap.timeline({
 		scrollTrigger: {
-			trigger: trigerMain,
+			trigger: trigerAdvantage,
 			start: "top 90%",
 		},
 	});
 
-	mainBox.forEach((box) => {
-		mainAnimategroup.fromTo(
+	advantageBoxAnimate.forEach((box) => {
+		advantageAnimategroup.fromTo(
 			box,
 			{
 				y: "-100%",
@@ -76,6 +76,24 @@ if (trigerMain && mainBox) {
 			}
 		);
 	});
+}
+
+const neededAdvantage = document.querySelector(".needed");
+const neededBoxAnimate = document.querySelector(".needed-swiper");
+if (neededAdvantage && neededBoxAnimate) {
+	gsap.fromTo(
+		neededBoxAnimate,
+		{ y: "100%", opacity: 0 },
+		{
+			y: "0",
+			opacity: 1,
+			duration: 1.2,
+			scrollTrigger: {
+				trigger: neededAdvantage,
+				start: "top 40%",
+			},
+		}
+	);
 }
 
 // solution animation

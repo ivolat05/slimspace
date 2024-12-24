@@ -1,28 +1,22 @@
-const fastingSwiper = document.querySelector(".fasting-swiper");
-const fastingSwiperConfig = {
+const neededSwiper = document.querySelector(".needed-swiper");
+const neededSwiperConfig = {
 	slidesPerView: 3,
-	spaceBetween: 10,
-	loop: true,
-	navigation: {
-		nextEl: ".fasting__slide-prev",
-		prevEl: ".fasting__slide-next",
-	},
-	autoplay: {
-		delay: 3000,
-		reverseDirection: true,
+	spaceBetween: 0,
+	pagination: {
+		el: ".swiper-pagination",
 	},
 	breakpoints: {
 		320: {
 			slidesPerView: 1,
 			spaceBetween: 20,
 		},
-		600: {
+		572: {
 			slidesPerView: 2,
 			spaceBetween: 20,
 		},
-		1200: {
+		800: {
 			slidesPerView: 3,
-			spaceBetween: 40,
+			spaceBetween: 0,
 		},
 	},
 };
@@ -65,31 +59,6 @@ const reviewsSwiperConfig = {
 	},
 };
 
-const nutritionSwiper = document.querySelector(".nutrition__swiper");
-const nutritionSwiperConfig = {
-	slidesPerView: 4,
-	spaceBetween: 10,
-
-	breakpoints: {
-		320: {
-			slidesPerView: 1.5,
-			spaceBetween: 40,
-		},
-		660: {
-			slidesPerView: 2.5,
-			spaceBetween: 30,
-		},
-		998: {
-			slidesPerView: 3.2,
-			spaceBetween: 40,
-		},
-		1300: {
-			slidesPerView: 4,
-			spaceBetween: 50,
-		},
-	},
-};
-
 /**
  * Функция для инициализации Swiper
  * @param {HTMLElement} swiperElement - Элемент DOM для Swiper
@@ -104,6 +73,5 @@ function swiperInstal(swiperElement, config) {
 		}
 	}
 }
-swiperInstal(fastingSwiper, fastingSwiperConfig);
+swiperInstal(neededSwiper, neededSwiperConfig);
 swiperInstal(reviewsSwiper, reviewsSwiperConfig);
-swiperInstal(nutritionSwiper, nutritionSwiperConfig);

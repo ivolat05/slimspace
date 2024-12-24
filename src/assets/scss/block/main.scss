@@ -1,9 +1,11 @@
 .main {
 	isolation: isolate;
 	position: relative;
+	z-index: 1;
 }
 
 .main__wrapp {
+	max-width: 1240px;
 	position: relative;
 	display: grid;
 	grid-template-columns: 350px 1fr;
@@ -698,7 +700,7 @@
 }
 
 .main-img-back-6 {
-	bottom: -133px;
+	bottom: 0;
 	left: 12%;
 	z-index: 1;
 

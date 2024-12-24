@@ -1,0 +1,227 @@
+.advantage {
+	padding-top: 53px;
+	padding-bottom: 92px;
+	background: url("../../assets/img/advantage/back.png") no-repeat left 0 bottom 100%, #ED7A47;
+	position: relative;
+
+
+	@media($mobile) {
+		padding-top: 27px;
+		padding-bottom: 27px;
+		background: #ED7A47;
+	}
+}
+
+.advantage-input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	overflow: hidden;
+	opacity: 0;
+	z-index: -3333;
+}
+
+.advantage-input:checked~.advantage-btn::after {
+	content: "Скрыть";
+}
+
+.advantage-btn {
+	background: none;
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 100%;
+	text-align: center;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	min-height: 65px;
+	color: #FFC69A;
+	border: 1.5px solid #FFC69A;
+	cursor: pointer;
+	display: none;
+	width: 100%;
+	max-width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+
+	&::after {
+		content: "Показать всё";
+		font-family: 'Jost';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 100%;
+		text-align: center;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+
+		color: #FFC69A;
+	}
+
+	@media($mobile) {
+		display: flex;
+		margin-top: 37px;
+	}
+
+	@media(hover:hover) {
+		&:hover {
+			background: #769C30;
+			border-color: #769C30;
+			color: #fff;
+		}
+	}
+
+	@media(hover:none) {
+		&:active {
+			background: #769C30;
+			border-color: #769C30;
+			color: #fff;
+		}
+	}
+}
+
+
+
+.advantage-input:checked~.advantage__row {
+	.advantage__box {
+		display: flex;
+	}
+}
+
+.advantage-title {
+
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 35px;
+	line-height: 43px;
+
+	color: #FFFFFF;
+
+	text-shadow: 1px 1px 1px rgba(157, 66, 25, 0.8);
+
+	@media($mobile) {
+		text-align: center;
+		font-size: 30px;
+		line-height: 32px;
+	}
+}
+
+.advantage__box {
+	display: flex;
+	isolation: isolate;
+
+	@media($mobile) {
+		display: none;
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3) {
+			display: flex;
+		}
+	}
+
+}
+
+.advantage__row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	position: relative;
+	padding-right: 30px;
+	gap: 60px;
+	padding-top: 42px;
+
+	&::after {
+		content: "";
+		width: 22px;
+		height: 100%;
+		opacity: .35;
+		position: absolute;
+		right: 0;
+		top: 0;
+		background: url("../../assets/img/advantage/line.svg") no-repeat center center/contain;
+
+		@media($mobile) {
+			background: none;
+			width: 0;
+		}
+	}
+
+	@media(max-width:1200px) {
+		gap: 60px 30px;
+	}
+
+	@media($tablet) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media($mobile) {
+		grid-template-columns: 100%;
+		padding: 23px 15px 0 15px;
+		gap: 15px;
+	}
+
+}
+
+.advantage__box-img {
+	width: 70px;
+	height: 70px;
+	flex-shrink: 0;
+	margin-right: 23px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
+
+	position: relative;
+
+	img,
+	svg {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		flex-shrink: 0;
+	}
+
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 98px;
+		height: 96px;
+		z-index: -1;
+		transform: translateX(50%);
+		background: #FFE629;
+		opacity: 0.37;
+		filter: blur(54.5px);
+
+	}
+
+	@media($mobile) {
+		width: 55px;
+		height: 55px;
+		margin-right: 21px;
+	}
+}
+
+.advantage__box-text {
+	max-width: 224px;
+
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 24px;
+	color: #000000;
+
+	@media($mobile) {
+		font-family: 'Jost';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 23px;
+	}
+}
