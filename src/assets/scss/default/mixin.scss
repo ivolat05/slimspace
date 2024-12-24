@@ -1,34 +1,3 @@
- @mixin font($font_name, $file_name, $weight, $style) {
- 	@font-face {
- 		font-family: #{$font_name};
- 		font-display: swap;
- 		src: url("../../assets/fonts/#{$file_name}.woff") format("woff"),
- 		url("../../assets/fonts/#{$file_name}.woff2") format("woff2");
- 		font-weight: #{$weight};
- 		font-style: #{$style};
- 	}
- }
-
- @mixin hoverLink($hover_color, $active_color) {
- 	transition: $hover-trans;
-
- 	@media screen and (hover: hover) {
- 		&:hover {
- 			color: #{$hover_color};
- 		}
- 	}
-
- 	@media (hover: none) {
- 		&:active {
- 			color: #{$active_color};
- 		}
- 	}
-
- 	&:active {
- 		color: #{$active_color};
- 	}
- }
-
  @mixin hideText($count_line) {
  	overflow: hidden;
  	text-overflow: ellipsis;

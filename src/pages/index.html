@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 @@include("../html/head/head.html",{
 "title":'Главная страница'
 }
 )
 
 <body>
-	@@include("../html/header/header.html" )
-	<main
-		style="display:flex; align-items:center; justify-content:center;padding:0; margin:0;  height:100vh; background:black; font-size:100px; text-align:center; color:#fff;">
-		привет
-	</main>
-	@@include("../html/footer/footer.html")
+	<div class="page">
+
+		<main>
+			@@include("../html/index/main.html")
+		</main>
+		@@include("../html/footer/footer.html")
+	</div>
 	<script src="../assets/js/app.min.js"></script>
 </body>
 

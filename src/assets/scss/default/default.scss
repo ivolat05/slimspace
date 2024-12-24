@@ -56,66 +56,13 @@ select {
 .container {
 	width: 100%;
 	max-width: 100%;
-
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 1240px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 time {
 	display: block;
-}
-
-* {
-	&::-webkit-scrollbar-thumb {
-		width: 4px;
-		border-radius: 10px;
-		background: #0faeff;
-		cursor: grab;
-	}
-
-	&::-webkit-scrollbar {
-		width: 4px;
-		border-radius: 10px;
-		background: rgba(32, 76, 175, 0.05);
-	}
-}
-
-body {
-	&::-webkit-scrollbar-thumb {
-		width: 10px;
-		border-radius: 10px;
-		background: #0faeff;
-		cursor: grab;
-	}
-
-	&::-webkit-scrollbar {
-		width: 10px;
-		border-radius: 10px;
-		background: rgba(32, 76, 175, 0.05);
-	}
-}
-
-@-moz-document url-prefix() {
-	* {
-		scrollbar-width: thin;
-		scrollbar-color: #0faeff rgba(32, 76, 175, 0.05);
-
-		&::-webkit-scrollbar-thumb {
-			width: 4px;
-			background: #0faeff;
-			border-radius: 10px;
-		}
-
-		&::-webkit-scrollbar {
-			width: 4px;
-			background: rgba(32, 76, 175, 0.05);
-		}
-
-		&::-moz-scrollbar {
-			width: 4px;
-		}
-
-		.scrollable-content::-moz-scrollbar-thumb {
-			background: #0faeff;
-			border-radius: 10px;
-		}
-	}
 }

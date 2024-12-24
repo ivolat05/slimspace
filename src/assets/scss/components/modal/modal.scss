@@ -30,6 +30,6 @@
 .modal__container {
 	transform: translateY(-100%) rotateX(15deg);
 	transform-style: preserve-3d;
-	transition: $hover-trans;
+	transition: .4s;
 	margin: auto;
 }

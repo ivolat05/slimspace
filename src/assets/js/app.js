@@ -13,3 +13,4 @@
 --include('vendor/modal.js')
 // components
 --include('components/mask-phone.js')
+--include('components/animation.js')
