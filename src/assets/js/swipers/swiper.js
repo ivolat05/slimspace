@@ -4,6 +4,7 @@ const neededSwiperConfig = {
 	spaceBetween: 0,
 	pagination: {
 		el: ".swiper-pagination",
+		clickable: true,
 	},
 	breakpoints: {
 		320: {
@@ -21,40 +22,45 @@ const neededSwiperConfig = {
 	},
 };
 
-const reviewsSwiper = document.querySelector(".reviews-swiper");
+const reviewsSwiper = document.querySelector(".reviews__swiper");
 const reviewsSwiperConfig = {
-	slidesPerView: 4,
+	slidesPerView: 3,
+	slidesPerGroup: 3,
 	spaceBetween: 10,
 	loop: true,
 	preventClicks: true,
 	threshold: 15,
 	touchRatio: 0.3,
 	preventClicksPropagation: false,
-	navigation: {
-		nextEl: ".reviews__slide-prev",
-		prevEl: ".reviews__slide-next",
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false,
 	},
-	on: {
-		slideChange: () => {
-			openModalWindow(); // Вызов вашей функции при смене слайда
-		},
+	pagination: {
+		el: ".reviews__swiper-pagination",
+		clickable: true,
 	},
 	breakpoints: {
 		320: {
-			slidesPerView: 1,
-			spaceBetween: 40,
+			slidesPerView: 1.2,
+			slidesPerGroup: 1,
+			spaceBetween: 20,
 		},
-		660: {
+
+		572: {
 			slidesPerView: 2,
-			spaceBetween: 60,
+			slidesPerGroup: 2,
+			spaceBetween: 30,
 		},
-		998: {
-			slidesPerView: 3,
-			spaceBetween: 60,
+		762: {
+			slidesPerView: 1.2,
+			slidesPerGroup: 1,
+			spaceBetween: 20,
 		},
 		1300: {
-			slidesPerView: 4,
-			spaceBetween: 60,
+			slidesPerView: 3,
+			slidesPerGroup: 3,
+			spaceBetween: 40,
 		},
 	},
 };

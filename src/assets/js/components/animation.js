@@ -176,6 +176,41 @@ if (receiveTargetAnimate && receiveList) {
 	});
 }
 
+// animate review
+const reviewsTriger = document.querySelector(".reviews__wrapp");
+const reviewsLeftPanel = document.querySelector(".reviews__coll");
+const reviewsRightPanel = document.querySelector(".reviews__swiper-container");
+if (reviewsLeftPanel && reviewsTriger) {
+	gsap.fromTo(
+		reviewsLeftPanel,
+		{ x: "-100%", opacity: 0 },
+		{
+			x: "0",
+			opacity: 1,
+			duration: 2,
+			scrollTrigger: {
+				trigger: reviewsTriger,
+				start: "top 90%",
+			},
+		}
+	);
+}
+if (reviewsRightPanel && reviewsTriger) {
+	gsap.fromTo(
+		reviewsRightPanel,
+		{ x: "100%", opacity: 0 },
+		{
+			x: "0",
+			opacity: 1,
+			duration: 2,
+			scrollTrigger: {
+				trigger: reviewsTriger,
+				start: "top 90%",
+			},
+		}
+	);
+}
+
 // Анимация для чисел
 const animateNumbers = (element, target) => {
 	gsap.to(element, {

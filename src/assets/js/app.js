@@ -12,6 +12,8 @@
 --include('vendor/htmlRootUnlock.js')
 --include('vendor/modal.js')
 // components
+--include("components/scroll.js")
 --include('components/mask-phone.js')
 --include('components/animation.js')
 --include('swipers/swiper.js')
+--include("components/counter.js")
