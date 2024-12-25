@@ -3,10 +3,14 @@
 	padding-bottom: 65px;
 	padding-top: 50px;
 
+	@media(max-width:1080px) {
+		padding-bottom: 0;
+	}
+
 	@media($mobile) {
 		padding-top: 25px;
 		line-height: 32px;
-		padding-bottom: 0;
+
 	}
 }
 

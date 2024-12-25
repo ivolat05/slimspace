@@ -96,42 +96,21 @@ if (neededAdvantage && neededBoxAnimate) {
 	);
 }
 
-// solution animation
-const trigerSolution = document.querySelector(".solution");
-if (trigerSolution) {
-	const leftPanel = document.querySelector(".soluton__wrapp");
-	const rightPanel = document.querySelector(".solution__list-container");
+// want animation
+const trigerWant = document.querySelector(".want");
+if (trigerWant) {
+	const leftPanel = document.querySelector(".want-container");
 	if (leftPanel) {
 		gsap.fromTo(
 			leftPanel,
 			{
-				x: "-100%",
 				opacity: 0,
 			},
 			{
-				x: "0",
 				opacity: 1,
 				duration: 2,
 				scrollTrigger: {
-					trigger: trigerSolution,
-					start: "top 90%",
-				},
-			}
-		);
-	}
-	if (rightPanel) {
-		gsap.fromTo(
-			rightPanel,
-			{
-				opacity: 0,
-				x: "100%",
-			},
-			{
-				opacity: 1,
-				x: "0",
-				duration: 2,
-				scrollTrigger: {
-					trigger: trigerSolution,
+					trigger: trigerWant,
 					start: "top 90%",
 				},
 			}
@@ -139,166 +118,39 @@ if (trigerSolution) {
 	}
 }
 
-//wish animation
-const trigerWish = document.querySelector(".wish");
-if (trigerWish) {
-	const wishImg = document.querySelector(".wish__row-img");
-	const wishBoxAll = document.querySelectorAll(".wish__list-inner");
-	const wishWrapp = document.querySelector(".wish-wrapp");
-	const wishTimeline = gsap.timeline({
+// animate receive
+
+const receiveTargetAnimate = document.querySelector(".receive-container");
+const receiveList = document.querySelectorAll(".receive__list-inner");
+const receiveImg = document.querySelector(".receive__picture img");
+const receiveGenderList = document.querySelectorAll(".receive__gender-inner");
+if (receiveTargetAnimate && receiveList) {
+	const reciveAnimategroup = gsap.timeline({
 		scrollTrigger: {
-			trigger: trigerSolution,
+			trigger: receiveTargetAnimate,
 			start: "top 90%",
 		},
 	});
-	if (wishImg) {
-		wishTimeline.fromTo(
-			wishImg,
+	if (receiveImg) {
+		reciveAnimategroup.fromTo(
+			receiveImg,
 			{
+				scale: "0",
 				opacity: 0,
 			},
 			{
+				scale: "1",
 				opacity: 1,
-				duration: 1,
+				duration: 0.7,
 			}
 		);
 	}
-	if (wishBoxAll) {
-		wishBoxAll.forEach((wishBox, index) => {
-			wishTimeline.fromTo(
-				wishBox,
-				{
-					x: index % 2 === 0 ? "-100%" : "100%",
-					opacity: 0,
-				},
-				{
-					x: "0",
-					opacity: 1,
-					duration: 0.5,
-				}
-			);
-		});
-	}
-	if (wishWrapp) {
-		wishTimeline.fromTo(
-			wishWrapp,
+
+	receiveList.forEach((inner) => {
+		reciveAnimategroup.fromTo(
+			inner,
 			{
-				opacity: 0,
-				scale: 0,
-			},
-			{
-				opacity: 1,
-				scale: 1,
-				duration: 0.5,
-			}
-		);
-	}
-}
-
-// fasting animation
-const fastingTop = document.querySelector(".fasting-top");
-const trigerFastingTop = document.querySelector(".fasting");
-if (fastingTop && trigerFastingTop) {
-	gsap.fromTo(
-		fastingTop,
-		{
-			y: "100%",
-			opacity: 0,
-		},
-		{
-			y: "0",
-			opacity: 1,
-			duration: 0.7,
-			scrollTrigger: {
-				trigger: trigerFastingTop,
-				start: "top 90%",
-			},
-		}
-	);
-}
-
-const trigerBlock = document.querySelector(".fasting-bottom ");
-const arrowClock = document.querySelector(".fasting-svg-arrow");
-if (trigerBlock && arrowClock) {
-	const clockAnimategroup = gsap.timeline({
-		scrollTrigger: {
-			trigger: trigerBlock,
-			start: "top 90%",
-		},
-	});
-	clockAnimategroup.fromTo(
-		".fasting-bottom-title",
-		{
-			x: "-100%",
-			opacity: 0,
-		},
-		{
-			x: "0",
-			opacity: 1,
-			duration: 0.5,
-		}
-	);
-	clockAnimategroup.fromTo(
-		".fasting__list-check",
-		{
-			x: "-100%",
-			opacity: 0,
-		},
-		{
-			x: "0",
-			opacity: 1,
-			duration: 0.5,
-		}
-	);
-
-	clockAnimategroup.fromTo(
-		".fasting-bottom-footer",
-		{
-			x: "-100%",
-			opacity: 0,
-		},
-		{
-			x: "0",
-			opacity: 1,
-			duration: 0.5,
-		}
-	);
-	clockAnimategroup.fromTo(
-		".fasting-scales ",
-		{
-			opacity: 0,
-		},
-		{
-			opacity: 1,
-			duration: 0.5,
-		}
-	);
-	clockAnimategroup.to(".fasting-svg-arrow", {
-		transformOrigin: "bottom right",
-		rotation: -100,
-		duration: 4,
-	});
-}
-
-// animate diet
-const trigerBlockDiet = document.querySelector(".diet");
-if (trigerBlockDiet) {
-	const dietTitle = document.querySelector(".diet-title");
-	const dietBtns = document.querySelector(".diet-btn-row");
-	const dietListInner = document.querySelectorAll(".diet-list-inner");
-
-	const dietAnimategroup = gsap.timeline({
-		scrollTrigger: {
-			trigger: trigerBlockDiet,
-			start: "top 90%",
-		},
-	});
-
-	if (dietTitle) {
-		dietAnimategroup.fromTo(
-			dietTitle,
-			{
-				y: "-100%",
+				y: "150%",
 				opacity: 0,
 			},
 			{
@@ -307,12 +159,12 @@ if (trigerBlockDiet) {
 				duration: 0.5,
 			}
 		);
-	}
-	if (dietBtns) {
-		dietAnimategroup.fromTo(
-			dietBtns,
+	});
+	receiveGenderList.forEach((inner, index) => {
+		reciveAnimategroup.fromTo(
+			inner,
 			{
-				x: "-100%",
+				x: index % 2 ? "150%" : "-150%",
 				opacity: 0,
 			},
 			{
@@ -321,91 +173,7 @@ if (trigerBlockDiet) {
 				duration: 0.5,
 			}
 		);
-	}
-	if (dietListInner) {
-		dietListInner.forEach((inner) => {
-			dietAnimategroup.fromTo(
-				inner,
-				{
-					y: "100%",
-					opacity: 0,
-				},
-				{
-					y: "0",
-					opacity: 1,
-					duration: 0.5,
-				}
-			);
-		});
-	}
-}
-
-//animate questions
-
-const questionsBlockDiet = document.querySelector(".questions-title");
-if (questionsBlockDiet) {
-	const questionsTitle = document.querySelector(".questions-title");
-
-	const questionsAcc = document.querySelectorAll(".questions__accordion");
-
-	const questionsAnimategroup = gsap.timeline({
-		scrollTrigger: {
-			trigger: questionsBlockDiet,
-			start: "top 90%",
-		},
 	});
-
-	if (questionsTitle) {
-		questionsAnimategroup.fromTo(
-			questionsTitle,
-			{
-				y: "-100%",
-				opacity: 0,
-			},
-			{
-				y: "0",
-				opacity: 1,
-				duration: 0.5,
-			}
-		);
-	}
-
-	if (questionsAcc) {
-		questionsAcc.forEach((inner) => {
-			questionsAnimategroup.fromTo(
-				inner,
-				{
-					y: "100%",
-					opacity: 0,
-				},
-				{
-					y: "0",
-					opacity: 1,
-					duration: 0.5,
-				}
-			);
-		});
-	}
-}
-
-// reivews animate
-const reviewsAnimate = document.querySelector(".reviews-animate");
-const trigerReviews = document.querySelector(".reviews");
-if (trigerReviews && reviewsAnimate) {
-	gsap.fromTo(
-		reviewsAnimate,
-		{
-			opacity: 0,
-		},
-		{
-			opacity: 1,
-			duration: 3,
-			scrollTrigger: {
-				trigger: trigerReviews,
-				start: "top 90%",
-			},
-		}
-	);
 }
 
 // Анимация для чисел

@@ -1,0 +1,288 @@
+.receive-container {
+	display: grid;
+	grid-template-columns: 1fr 370px;
+
+	@media(max-width:1280px) {
+		display: block;
+	}
+}
+
+.receive__wrapp-coll {
+	max-width: 390px;
+	margin-left: auto;
+	margin-right: 0;
+	position: relative;
+	z-index: 1;
+
+	@media(max-width:1280px) {
+		max-width: 100%;
+		padding-top: 15px;
+	}
+}
+
+.receive__img {
+	position: absolute;
+	left: -65px;
+	bottom: 0;
+
+	@media(max-width:1280px) {
+		position: relative;
+		left: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		display: block;
+	}
+}
+
+.receive__picture {
+	display: contents;
+
+	@media(max-width:1280px) {
+		position: relative;
+		left: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		display: block;
+	}
+}
+
+.receive__wrapp,
+.receive__gender-list {
+	padding-top: 115px;
+	padding-bottom: 50px;
+}
+
+.receive__wrapp {
+	position: relative;
+	isolation: isolate;
+	background: #E25252;
+	padding-right: 47px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100vw;
+		left: 1px;
+		top: 0;
+		transform: translateX(-100%);
+		z-index: -1;
+		background: #E25252;
+
+		@media(max-width:1280px) {
+			background: none;
+			width: 0;
+		}
+	}
+
+	@media(max-width:1280px) {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+	}
+
+	@media(max-width:1080px) {
+		padding-top: 25px;
+		padding-bottom: 38px;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media($mobile) {
+		display: block;
+	}
+
+}
+
+.receive__gender-list {
+	position: relative;
+	isolation: isolate;
+	background: #8CAC3D;
+	padding-left: 50px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100vw;
+		right: 1px;
+		top: 0;
+		transform: translateX(100%);
+		z-index: -1;
+		background: #8CAC3D;
+
+		@media(max-width:1280px) {
+			background: none;
+			width: 0;
+		}
+	}
+
+	@media(max-width:1280px) {
+		padding: 35px 20px;
+		margin-left: -20px;
+		margin-right: -20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 35px;
+		flex-wrap: wrap;
+	}
+
+	@media($mobile) {
+		flex-direction: column;
+		gap: 35px 0;
+	}
+
+}
+
+
+
+.receive-title {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 35px;
+	line-height: 43px;
+
+	color: #FFB5B5;
+
+	@media($mobile) {
+		text-align: center;
+		font-size: 30px;
+		line-height: 32px;
+	}
+}
+
+.receive__list {
+	padding-top: 17px;
+}
+
+.receive__list-inner {
+	padding-left: 48px;
+	position: relative;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 24px;
+	color: #FFFFFF;
+
+	&::before {
+		content: "";
+		width: 34px;
+		height: 34px;
+		background: url("../../assets/img/receive/star.png")no-repeat center top/contain;
+
+		position: absolute;
+		left: 0;
+		top: -7px;
+
+	}
+}
+
+.receive__list-inner+.receive__list-inner {
+	margin-top: 18px;
+
+	@media($mobile) {
+		margin-top: 10px;
+	}
+}
+
+.receive__gender-inner {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	isolation: isolate;
+
+	&::after {
+		content: "";
+		width: 278px;
+		height: 141px;
+		border-radius: 70%;
+		position: absolute;
+		z-index: -3;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background: #93FF7D;
+		mix-blend-mode: plus-lighter;
+		opacity: 0.77;
+		filter: blur(78.5px);
+
+	}
+
+}
+
+.receive__gender-inner+.receive__gender-inner {
+	margin-top: 31px;
+
+	@media(max-width:1280px) {
+		margin-top: 0;
+	}
+}
+
+.receive__gender-img {
+	flex-shrink: 0;
+	width: 100px;
+	height: 100px;
+	margin-right: 23px;
+}
+
+.receive__gender-title {
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 20px;
+	text-transform: uppercase;
+
+	color: #FFFFFF;
+
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.17);
+
+}
+
+.receive__gender-text {
+	padding-top: 15px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 23px;
+	color: #161335;
+	max-width: 178px;
+}
+
+.receive {
+	position: relative;
+}
+
+.receive-img-back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	left: 50px;
+
+	mix-blend-mode: luminosity;
+	opacity: 0.37;
+
+	@media(max-width:1080px) {
+		display: none;
+	}
+}
+
+.receive-img-back-2 {
+	position: absolute;
+	right: -130px;
+	bottom: 0;
+
+	transform: matrix(-0.98, 0.21, 0.21, 0.98, 0, 0);
+
+	@media(max-width:1080px) {
+		display: none;
+	}
+}

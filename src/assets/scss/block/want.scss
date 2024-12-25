@@ -1,0 +1,133 @@
+.want {
+	position: relative;
+	z-index: 2;
+}
+
+.want-container {
+	position: relative;
+	z-index: 1;
+}
+
+.want__wrapp {
+	background: #F3F3F3;
+	display: grid;
+	grid-template-columns: 486px 1fr;
+	position: absolute;
+	transform: translateY(-50%);
+
+	@media(max-width:1220px) {
+		grid-template-columns: 430px 1fr;
+	}
+
+	@media(max-width:1080px) {
+		position: relative;
+		display: block;
+		margin-right: -20px;
+		margin-left: -20px;
+		transform: translateY(0);
+	}
+}
+
+.want__btn {
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@media(max-width:1080px) {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 320px;
+		margin-top: 25px;
+	}
+}
+
+.want__wrapp-head {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: 12px;
+	padding-right: 30px;
+	background: #fff;
+
+	@media(max-width:1220px) {
+		padding-right: 10px;
+	}
+
+	@media(max-width:1080px) {
+		padding: 25px 20px;
+		justify-content: center;
+	}
+}
+
+.want__wrapp-img {
+	padding-top: 20px;
+	height: 100%;
+	width: 215px;
+	margin-top: auto;
+	margin-bottom: 0;
+	display: flex;
+	align-items: flex-end;
+	flex-shrink: 0;
+
+	img,
+	svg {
+		width: 100%;
+		object-fit: contain;
+	}
+
+	@media(max-width:1220px) {
+		width: 170px;
+	}
+
+	@media(max-width:1080px) {
+		display: none;
+	}
+}
+
+.want-title {
+	padding-left: 12px;
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 28px;
+
+	color: #BA242F;
+
+	@media(max-width:1080px) {
+		text-align: center;
+		padding-left: 0;
+	}
+}
+
+.want-text {
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 25px;
+	color: #2A264B;
+
+	@media(max-width:1080px) {
+		text-align: center;
+	}
+}
+
+.want__wrapp-body {
+	display: grid;
+	grid-template-columns: 1fr 355px;
+	align-items: center;
+	padding: 20px 20px 20px 40px;
+	gap: 23px;
+
+	@media(max-width:1220px) {
+		grid-template-columns: 1fr 310px;
+		gap: 15px;
+		padding-left: 20px;
+	}
+
+	@media(max-width:1080px) {
+		display: block;
+		padding: 23px 20px;
+	}
+}
