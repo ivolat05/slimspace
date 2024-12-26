@@ -2,6 +2,8 @@
 	background: #FFB500;
 	padding-top: 70px;
 	isolation: isolate;
+	position: relative;
+	z-index: 1;
 
 	@media($mobile) {
 		padding-top: 38px;
