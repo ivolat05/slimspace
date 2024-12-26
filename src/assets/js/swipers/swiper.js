@@ -26,12 +26,13 @@ const reviewsSwiper = document.querySelector(".reviews__swiper");
 const reviewsSwiperConfig = {
 	slidesPerView: 3,
 	slidesPerGroup: 3,
-	spaceBetween: 10,
+	spaceBetween: 40,
 	loop: true,
 	preventClicks: true,
 	threshold: 15,
 	touchRatio: 0.3,
 	preventClicksPropagation: false,
+	speed: 800,
 	autoplay: {
 		delay: 5000,
 		disableOnInteraction: false,
@@ -46,10 +47,9 @@ const reviewsSwiperConfig = {
 			slidesPerGroup: 1,
 			spaceBetween: 20,
 		},
-
 		572: {
 			slidesPerView: 2,
-			slidesPerGroup: 2,
+			slidesPerGroup: 2.2,
 			spaceBetween: 30,
 		},
 		762: {
@@ -63,6 +63,7 @@ const reviewsSwiperConfig = {
 			spaceBetween: 40,
 		},
 	},
+	grabCursor: true,
 };
 
 /**

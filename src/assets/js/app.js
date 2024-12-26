@@ -17,3 +17,6 @@
 --include('components/animation.js')
 --include('swipers/swiper.js')
 --include("components/counter.js")
+--include("components/timer.js")
+--include("components/validation.js")
+--include("components/rezet-input.js")

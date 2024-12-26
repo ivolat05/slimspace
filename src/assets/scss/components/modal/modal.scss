@@ -39,6 +39,10 @@
 
 }
 
+.modal__container-list {
+	max-width: 480px;
+}
+
 .modal-btn {
 	position: absolute;
 	left: 50%;
@@ -102,4 +106,47 @@
 	font-size: 17px;
 	line-height: 22px;
 	color: #5A5871;
+}
+
+.modal-title {
+
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 43px;
+	color: #161335;
+}
+
+.modal-list {
+	padding-top: 15px;
+}
+
+.modal-inner+.modal-inner {
+	padding-top: 10px;
+}
+
+.modal-inner,
+.modal-inner a {
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 22px;
+	color: #161335;
+	text-decoration: underline;
+	transition: .4s;
+
+	@media(hover:hover) {
+		&:hover {
+			color: #D83C48;
+
+		}
+	}
+
+	@media(hover:none) {
+		&:active {
+			color: #D83C48;
+		}
+	}
 }
