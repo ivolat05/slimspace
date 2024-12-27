@@ -17,6 +17,7 @@
 @import "../scss/default/footer.scss";
 
 //index
+@import"../scss/block/page.scss";
 @import "../scss/block/main.scss";
 @import "../scss/block/advantage.scss";
 @import "../scss/block/needed.scss";
@@ -24,3 +25,7 @@
 @import "../scss/block/receive.scss";
 @import "../scss/block/reviews.scss";
 @import "../scss/block/form.scss";
+
+// result
+@import "../scss/block/main.scss";
+@import "../scss/block/plan.scss";

@@ -1,0 +1,47 @@
+.page {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+	overflow: hidden;
+}
+
+.page-yellow {
+	background: #FFB500;
+	isolation: isolate;
+}
+
+.page__head {
+	padding-top: 300px;
+	padding-bottom: 95px;
+	background: #CEE073;
+
+
+	@media($tablet) {
+		padding-top: 150px;
+		padding-bottom: 70px;
+	}
+
+	@media($mobile) {
+		padding-top: 100px;
+		padding-bottom: 50px;
+	}
+}
+
+.page-title {
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 41px;
+	line-height: 43px;
+	text-align: center;
+	color: #161335;
+
+
+	@media($mobile) {
+		font-size: 30px;
+		line-height: 28px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}

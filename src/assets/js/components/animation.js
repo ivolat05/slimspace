@@ -211,45 +211,63 @@ if (reviewsRightPanel && reviewsTriger) {
 	);
 }
 
-// Анимация для чисел
-const animateNumbers = (element, target) => {
-	gsap.to(element, {
-		innerText: target,
-		duration: 1.5,
-		ease: "power1.out",
-		snap: { innerText: 1 }, // Округляем до целых чисел
-		onUpdate: function () {
-			element.textContent = Math.floor(element.innerText);
+// diagram animatin
+const trigerStartPlan = document.querySelector(".plan");
+const blockAnimLine = document.querySelector(".plan-control-visible-line");
+const planBoxes = document.querySelectorAll(".plan__info-box");
+
+if (trigerStartPlan && planBoxes && blockAnimLine) {
+	// Настройка ScrollTrigger
+	const optionTriger = {
+		trigger: trigerStartPlan,
+		start: "top 10%",
+	};
+
+	// Анимация линии
+	gsap.fromTo(
+		blockAnimLine,
+		{
+			width: "100%",
 		},
+		{
+			width: "0%",
+			duration: 9,
+			scrollTrigger: optionTriger,
+		}
+	);
+
+	// Анимация блоков с числами
+	const timeLine = gsap.timeline({
+		scrollTrigger: optionTriger,
 	});
-};
 
-// Анимация для прогресс-бара
-const progressBars = document.querySelectorAll(".progress-item");
-if (progressBars) {
-	progressBars.forEach((item) => {
-		const numberElement = item.querySelector(".progress-number");
-		const progressFill = item.querySelector(".progress-fill");
-		const targetValue = parseInt(
-			numberElement.getAttribute("data-target"),
-			10
+	// Анимация появления каждого блока и чисел внутри
+	planBoxes.forEach((box) => {
+		const span = box.querySelector("span"); // Находим span с числом
+		const targetValue = parseInt(span.textContent); // Конечное значение числа
+
+		// Анимация появления блока
+		timeLine.fromTo(
+			box,
+			{ opacity: 0, y: 20 },
+			{ opacity: 1, y: 0, duration: 1, ease: "power1.out" }
 		);
-		const fillPercent = targetValue === 16 ? "80%" : "40%"; // Устанавливаем ширину вручную
 
-		ScrollTrigger.create({
-			trigger: item,
-			start: "top 80%",
-			onEnter: () => {
-				// Анимация заполнения чисел
-				animateNumbers(numberElement, targetValue);
-
-				// Анимация заполнения прогресс-бара
-				gsap.to(progressFill, {
-					width: fillPercent,
-					duration: 1.5,
-					ease: "power1.out",
-				});
-			},
-		});
+		// Анимация чисел после появления блока
+		timeLine.fromTo(
+			span,
+			{ innerText: 0 },
+			{
+				innerText: targetValue,
+				duration: 1,
+				ease: "power1.out",
+				snap: { innerText: 1 },
+				onUpdate: function () {
+					span.textContent = `${Math.round(
+						this.targets()[0].innerText
+					)}%`;
+				},
+			}
+		);
 	});
 }

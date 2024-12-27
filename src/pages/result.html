@@ -6,10 +6,17 @@
 )
 
 <body>
-	<div class="page">
-
-		<main>
-
+	<div class="page page-yellow">
+		@@include("../html/header/header.html")
+		<div class="page__head">
+			<div class="container page__container ">
+				<h1 class="page-title">
+					Ваш план голодания готов!
+				</h1>
+			</div>
+		</div>
+		<main class="main-result">
+			@@include("../html/result/plan.html")
 			@@include("../html/result/reviews-result.html")
 			@@include("../html/result/form-result.html")
 		</main>

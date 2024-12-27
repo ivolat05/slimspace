@@ -315,3 +315,11 @@
 	position: relative;
 	z-index: 2;
 }
+
+.reviews-result {
+	.reviews__swiper-container {
+		@media($mobile) {
+			background: #FFB500;
+		}
+	}
+}

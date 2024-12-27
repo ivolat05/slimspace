@@ -1,0 +1,192 @@
+ .plan__wrapp {
+ 	background: #FAFAFA;
+ 	display: grid;
+ 	grid-template-columns: 1fr 320px 353px;
+ 	grid-template-rows: auto 1fr;
+ 	grid-template-areas:
+ 		"plan__head plan__head plan__right"
+ 		"plan__diagram plan__info plan__right"
+ 	;
+ }
+
+ .plan__head {
+ 	grid-area: plan__head;
+ }
+
+ .plan__diagram {
+ 	grid-area: plan__diagram;
+ }
+
+ .plan__info {
+ 	grid-area: plan__info;
+ 	background: #ED7A47;
+ }
+
+ .plan__right {
+ 	grid-area: plan__right;
+ }
+
+ .plan__head {
+ 	background: #F3F3F3;
+ 	display: flex;
+ 	justify-content: space-between;
+ }
+
+ .plan-container {
+ 	padding-left: 15px;
+ 	padding-right: 15px;
+
+ 	@media($macbook) {
+ 		padding-left: 20px;
+ 		padding-right: 20px;
+ 	}
+ }
+
+ .plan__diagram {
+ 	background: #8CAC3D;
+ }
+
+ .plan__diagram-imgs {
+ 	position: relative;
+ 	isolation: isolate;
+
+ }
+
+ .plan__diagram-img {
+ 	width: 100%;
+ 	object-fit: contain;
+
+ }
+
+ .plan__diagram-svg {
+ 	position: absolute;
+ 	top: 22%;
+ 	left: 0;
+ 	width: 100%;
+ 	height: 55%;
+ 	object-fit: contain;
+ 	z-index: -2;
+
+ }
+
+ .plan-control-visible-line {
+ 	position: absolute;
+ 	width: 100%;
+ 	height: 100%;
+ 	background: #8CAC3D;
+ 	right: 0;
+ 	top: 0;
+ 	z-index: -1;
+ }
+
+
+ .plan__head-icon {
+ 	width: 55px;
+ 	height: 55px;
+ 	flex-shrink: 0;
+ 	object-fit: contain;
+ 	margin-right: 15px;
+ }
+
+ .plan__head-top {
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: flex-start;
+ }
+
+ .plan__head-title {
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 500;
+ 	font-size: 50px;
+ 	line-height: 43px;
+ 	letter-spacing: -0.06em;
+ 	color: #161335;
+ }
+
+ .plan__head-text {
+ 	padding-top: 15px;
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 400;
+ 	font-size: 19px;
+ 	line-height: 24px;
+ 	color: #191F09;
+ }
+
+ .plan__diagram-title {
+
+
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 600;
+ 	font-size: 25px;
+ 	line-height: 30px;
+ 	color: #FFFFFF;
+
+ }
+
+ .plan__diagram-row {
+ 	display: flex;
+ 	justify-content: space-between;
+ 	padding-top: 15px;
+ }
+
+ .plan__diagram-subtitle {
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 500;
+ 	font-size: 14px;
+ 	line-height: 24px;
+ 	text-transform: uppercase;
+ 	color: #FFFFFF;
+ }
+
+ .plan__info-title {
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 400;
+ 	font-size: 20px;
+ 	line-height: 26px;
+ 	color: #FFFFFF;
+ }
+
+ .plan__info-wrapp {
+ 	position: relative;
+ 	isolation: isolate;
+ 	width: 115px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+
+ 	img,
+ 	svg {
+ 		width: 100%;
+ 		height: auto;
+ 		object-fit: contain;
+ 	}
+ }
+
+ .plan__info-inner {
+ 	position: absolute;
+ 	left: 0;
+ 	top: 0;
+ }
+
+ .plan__info-box {
+
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 500;
+ 	font-size: 12px;
+ 	line-height: 15px;
+ 	text-align: center;
+ 	letter-spacing: -0.01em;
+ 	text-transform: uppercase;
+
+ 	color: #FFFFFF;
+
+ 	background: #161335;
+ 	padding: 4px 5px;
+
+
+ }

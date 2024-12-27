@@ -34,15 +34,6 @@ html {
 
 }
 
-.page {
-	display: flex;
-	min-height: 100vh;
-	flex-direction: column;
-
-	overflow: hidden;
-}
-
-
 /* убираем тени safari */
 input:not([type="checkbox"]):not([type="radio"]),
 textarea,

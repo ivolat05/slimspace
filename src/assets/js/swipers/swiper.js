@@ -48,13 +48,18 @@ const reviewsSwiperConfig = {
 			spaceBetween: 20,
 		},
 		572: {
-			slidesPerView: 2,
-			slidesPerGroup: 2.2,
+			slidesPerView: 2.1,
+			slidesPerGroup: 2,
 			spaceBetween: 30,
 		},
 		762: {
 			slidesPerView: 1.2,
 			slidesPerGroup: 1,
+			spaceBetween: 20,
+		},
+		992: {
+			slidesPerView: 2,
+			slidesPerGroup: 2,
 			spaceBetween: 20,
 		},
 		1300: {

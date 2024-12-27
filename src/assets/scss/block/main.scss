@@ -732,3 +732,13 @@
 		padding-top: 15px;
 	}
 }
+
+.main-result {
+	position: relative;
+	z-index: 1;
+	margin-top: -50px;
+
+	@media($mobile) {
+		margin-top: -30px;
+	}
+}
