@@ -1,0 +1,310 @@
+.nutrition {
+	padding-top: 35px;
+	padding-bottom: 50px;
+
+	@media($mobile) {
+		padding-top: 30px;
+		padding-bottom: 20px;
+	}
+}
+
+.nutrition-title {
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 35px;
+	line-height: 43px;
+	text-align: center;
+
+	color: #161335;
+
+	@media($mobile) {
+		font-family: 'Jost';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 26px;
+		line-height: 28px;
+	}
+
+}
+
+.nutrition__wrapp {
+	margin-top: 24px;
+	position: relative;
+	display: grid;
+	grid-template-columns: calc(100% - 353px) 353px;
+
+	@media($mobile) {
+		display: block;
+		margin-top: 16px;
+	}
+}
+
+.nutrition__wrapp-swiper {
+	background: #FAFAFA;
+	padding: 30px 35px 55px 35px;
+
+	@media($mobile) {
+		padding-top: 25px;
+		padding-bottom: 33px;
+	}
+}
+
+.nutrition__wrapp-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@media($mobile) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+}
+
+.nutrition__wrapp-title {
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 30px;
+	color: #161335;
+
+	@media($mobile) {
+		font-size: 23px;
+		line-height: 27px;
+	}
+}
+
+.nutrition__wrapp-link {
+
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 30px;
+
+	color: #88888F;
+
+
+}
+
+.nutrition__swiper-pagination {
+	position: relative;
+	margin-top: 15px;
+
+	.swiper-pagination-bullet.swiper-pagination-bullet-active {
+		background: #E25252;
+	}
+
+	.swiper-pagination-bullet {
+		width: 8px;
+		height: 8px;
+		opacity: 1;
+		background: #161335;
+		margin-right: 5px;
+		margin-left: 5px;
+		cursor: pointer;
+	}
+}
+
+.nutrition__swiper {
+	overflow: hidden;
+	margin-top: 25px;
+
+	@media($mobile) {
+		margin-top: 11px;
+	}
+}
+
+.nutrition__swiper-img {
+	width: 100%;
+	aspect-ratio: 247/179;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img,
+	svg {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		flex-shrink: 0;
+	}
+}
+
+.nutrition__swiper-title {
+	margin-top: 25px;
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 21px;
+	line-height: 25px;
+	color: #BA242F;
+
+	@media($mobile) {
+		text-align: center;
+	}
+
+}
+
+.nutrition__swiper-text {
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 22px;
+	color: #31381F;
+	padding-top: 15px;
+	padding-right: 10px;
+
+	@media($mobile) {
+		text-align: center;
+	}
+}
+
+.nutrition__coll {
+	background: #F3F3F3;
+	padding: 31px 32px 20px 42px;
+
+	@media($mobile) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.nutrition__coll-title {
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 30px;
+	color: #161335;
+
+	@media($mobile) {
+		font-size: 23px;
+		line-height: 27px;
+		text-align: center;
+	}
+}
+
+.nutrition__diagram-img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 185px;
+	height: 185px;
+	margin-right: 20px;
+	flex-shrink: 0;
+	position: relative;
+	overflow: hidden;
+
+	img,
+	svg {
+		flex-shrink: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	@media($mobile) {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+}
+
+.nutrition__coll-row {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 30px;
+
+	@media($mobile) {
+		display: block;
+		margin-top: 20px;
+	}
+}
+
+.nutrition__list {
+	@media($mobile) {
+		display: flex;
+		justify-content: center;
+		gap: 25px;
+		margin-top: 23px;
+	}
+}
+
+.nutrition__list-inner+.nutrition__list-inner {
+	margin-top: 15px;
+
+	@media($mobile) {
+		margin-top: 0;
+	}
+}
+
+.nutrition__diagram-circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: calc(100% + 20px) !important;
+
+	height: calc(100% + 20px) !important;
+	object-fit: contain;
+	transform: translate(-50%, -50%) rotate(-120deg) rotateY(180deg);
+	transform-style: preserve-3d;
+}
+
+.nutrition__list-title {
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 23px;
+	line-height: 24px;
+	text-transform: uppercase;
+
+	color: #8CAC3D;
+}
+
+.nutrition__list-text {
+
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 17px;
+	color: #161335;
+}
+
+.nutrition__btn {
+	margin-top: 36px;
+	width: 100%;
+	max-width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-family: 'Jost';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 64px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+
+	color: #FFFFFF;
+
+	@media($mobile) {
+		margin-top: 28px;
+	}
+
+}
+
+.nutrition__list-title.blue {
+	color: #898FDC;
+}
+
+.nutrition__list-title.yellow {
+	color: #ED7A47;
+}

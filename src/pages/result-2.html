@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include("../html/head/head.html",{
-"title":'2 Ваш план голодания готов!'
+"title":'Ваш план голодания готов!'
 }
 )
 
@@ -17,12 +17,20 @@
 				fill="#F5B432" />
 		</svg>
 	</div>
-	<div class="page">
-
-		<main>
-
-			@@include("../html/index/reviews.html")
-			@@include("../html/index/form.html")
+	<div class="page page-yellow">
+		@@include("../html/header/header.html")
+		<div class="page__head">
+			<div class="container page__container ">
+				<h1 class="page-title">
+					Ваш план голодания готов!
+				</h1>
+			</div>
+		</div>
+		<main class="main-result">
+			@@include("../html/result/plan.html")
+			@@include("../html/result/nutrition.html")
+			@@include("../html/result/reviews-result.html")
+			@@include("../html/result/form-result.html")
 		</main>
 		@@include("../html/footer/footer.html")
 		@@include("../html/modal/modal.html")

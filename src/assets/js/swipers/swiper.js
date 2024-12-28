@@ -21,6 +21,38 @@ const neededSwiperConfig = {
 		},
 	},
 };
+const nutritionSwiper = document.querySelector(".nutrition__swiper");
+const nutritionSwiperConfig = {
+	slidesPerView: 3,
+	spaceBetween: 0,
+	pagination: {
+		el: ".nutrition__swiper-pagination",
+		clickable: true,
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+		},
+		550: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+		762: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+		},
+		992: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+
+		1200: {
+			slidesPerView: 3,
+			spaceBetween: 30,
+		},
+	},
+};
 
 const reviewsSwiper = document.querySelector(".reviews__swiper");
 const reviewsSwiperConfig = {
@@ -87,3 +119,5 @@ function swiperInstal(swiperElement, config) {
 }
 swiperInstal(neededSwiper, neededSwiperConfig);
 swiperInstal(reviewsSwiper, reviewsSwiperConfig);
+
+swiperInstal(nutritionSwiper, nutritionSwiperConfig);

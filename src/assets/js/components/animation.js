@@ -178,8 +178,8 @@ if (receiveTargetAnimate && receiveList) {
 
 // animate review
 const reviewsTriger = document.querySelector(".reviews__wrapp");
-const reviewsLeftPanel = document.querySelector(".reviews__coll");
-const reviewsRightPanel = document.querySelector(".reviews__swiper-container");
+const reviewsLeftPanel = document.querySelector(".reviews__animate-left");
+const reviewsRightPanel = document.querySelector(".reviews__animate-right");
 if (reviewsLeftPanel && reviewsTriger) {
 	gsap.fromTo(
 		reviewsLeftPanel,
@@ -217,13 +217,11 @@ const blockAnimLine = document.querySelector(".plan-control-visible-line");
 const planBoxes = document.querySelectorAll(".plan__info-box");
 
 if (trigerStartPlan && planBoxes && blockAnimLine) {
-	// Настройка ScrollTrigger
 	const optionTriger = {
 		trigger: trigerStartPlan,
 		start: "top 50%",
 	};
 
-	// Анимация линии
 	gsap.fromTo(
 		blockAnimLine,
 		{
@@ -236,30 +234,83 @@ if (trigerStartPlan && planBoxes && blockAnimLine) {
 		}
 	);
 
-	// Анимация блоков с числами
 	const timeLine = gsap.timeline({
 		scrollTrigger: optionTriger,
 	});
 
-	// Анимация появления каждого блока и чисел внутри
 	planBoxes.forEach((box) => {
-		const span = box.querySelector("span"); // Находим span с числом
-		const targetValue = parseInt(span.textContent); // Конечное значение числа
+		const span = box.querySelector("span");
+		const targetValue = parseInt(span.textContent);
 
-		// Анимация появления блока
 		timeLine.fromTo(
 			box,
 			{ opacity: 0, y: 20 },
 			{ opacity: 1, y: 0, duration: 0.7, ease: "power1.out" }
 		);
 
-		// Анимация чисел после появления блока
 		timeLine.fromTo(
 			span,
 			{ innerText: 0 },
 			{
 				innerText: targetValue,
 				duration: 0.7,
+				ease: "power1.out",
+				snap: { innerText: 1 },
+				onUpdate: function () {
+					span.textContent = `${Math.round(
+						this.targets()[0].innerText
+					)}%`;
+				},
+			}
+		);
+	});
+}
+
+const allNutritionTitle = document.querySelectorAll(".nutrition__list-inner");
+const trigerNUrtition = document.querySelector(".nutrition__coll-row");
+const nutritionDiagramImg = document.querySelector(".nutrition__diagram-img");
+if (allNutritionTitle && trigerNUrtition && nutritionDiagramImg) {
+	const circle = document.querySelector(".circle-fill");
+
+	const nutritionOptionTriger = {
+		trigger: trigerNUrtition,
+		start: "top 70%",
+	};
+
+	if (circle) {
+		const radius = circle.r.baseVal.value;
+		const circumference = 2 * Math.PI * radius;
+		circle.style.strokeDasharray = circumference;
+		circle.style.strokeDashoffset = 0;
+
+		gsap.to(circle, {
+			strokeDashoffset: circumference,
+			duration: 7.6,
+			ease: "power1.out",
+			scrollTrigger: nutritionOptionTriger,
+		});
+	}
+
+	const nutritionTimeLine = gsap.timeline({
+		scrollTrigger: nutritionOptionTriger,
+	});
+
+	allNutritionTitle.forEach((box, index) => {
+		const span = box.querySelector("h3");
+		const targetValue = parseInt(span.textContent);
+		const t = { 0: 1.4, 1: 1.2, 2: 1 };
+		nutritionTimeLine.fromTo(
+			box,
+			{ opacity: 0, y: 20 },
+			{ opacity: 1, y: 0, duration: t[index], ease: "power1.out" }
+		);
+
+		nutritionTimeLine.fromTo(
+			span,
+			{ innerText: 0 },
+			{
+				innerText: targetValue,
+				duration: t[index],
 				ease: "power1.out",
 				snap: { innerText: 1 },
 				onUpdate: function () {
