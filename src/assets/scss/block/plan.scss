@@ -7,29 +7,80 @@
  		"plan__head plan__head plan__right"
  		"plan__diagram plan__info plan__right"
  	;
+
+ 	@media($laptop) {
+ 		grid-template-columns: 1fr 315px;
+ 		grid-template-areas:
+ 			"plan__head plan__head "
+ 			"plan__diagram plan__info "
+ 			"plan__right plan__right"
+ 		;
+
+ 	}
+
+ 	@media(max-width:770px) {
+ 		display: block;
+ 	}
  }
 
  .plan__head {
+
  	grid-area: plan__head;
+ 	padding: 60px 50px 53px 68px;
+ 	background: #F3F3F3;
+ 	display: flex;
+ 	justify-content: space-between;
+ 	gap: 31px 15px;
+
+ 	@media($laptop) {
+ 		padding: 20px;
+ 	}
+
+ 	@media($mobile) {
+ 		flex-direction: column;
+ 		justify-content: center;
+ 		align-items: center;
+ 		padding: 37px 20px;
+ 	}
  }
 
  .plan__diagram {
  	grid-area: plan__diagram;
+ 	padding: 42px 63px 48px 50px;
+
+ 	@media($laptop) {
+ 		padding: 33px 20px 15px 20px;
+ 	}
  }
 
  .plan__info {
  	grid-area: plan__info;
+ 	padding: 46px 40px 0 54px;
  	background: #ED7A47;
+ 	display: flex;
+ 	flex-direction: column;
+
+ 	@media($laptop) {
+ 		padding: 20px 20px 0 20px;
+ 	}
+
+ 	@media($mobile) {
+ 		padding: 35px 35px 0 35px;
+ 	}
  }
 
  .plan__right {
- 	grid-area: plan__right;
- }
+ 	padding: 33px 34px 0 37px;
 
- .plan__head {
- 	background: #F3F3F3;
- 	display: flex;
- 	justify-content: space-between;
+ 	grid-area: plan__right;
+
+ 	@media($laptop) {
+ 		padding: 20px 20px 0 20px;
+ 	}
+
+ 	@media($mobile) {
+ 		padding-top: 30px;
+ 	}
  }
 
  .plan-container {
@@ -49,7 +100,12 @@
  .plan__diagram-imgs {
  	position: relative;
  	isolation: isolate;
+ 	margin-top: 35px;
 
+ 	@media($mobile) {
+ 		margin-left: 20px;
+ 		margin-right: 20px;
+ 	}
  }
 
  .plan__diagram-img {
@@ -112,10 +168,16 @@
  	font-size: 19px;
  	line-height: 24px;
  	color: #191F09;
+ 	max-width: 220px;
+
+ 	@media($mobile) {
+ 		max-width: 240px;
+ 		padding-top: 25px;
+ 	}
  }
 
  .plan__diagram-title {
-
+ 	padding-left: 10px;
 
  	font-family: 'Jost';
  	font-style: normal;
@@ -124,12 +186,30 @@
  	line-height: 30px;
  	color: #FFFFFF;
 
+ 	@media(max-width:770px) {
+ 		max-width: 500px;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		text-align: center;
+ 		padding-left: 10px;
+ 		padding-right: 10px;
+ 		font-size: 23px;
+ 		line-height: 27px;
+ 	}
  }
 
  .plan__diagram-row {
  	display: flex;
  	justify-content: space-between;
  	padding-top: 15px;
+ 	padding-right: 24px;
+ 	padding-left: 12px;
+
+ 	@media(max-width:400px) {
+ 		padding-left: 30px;
+ 		padding-right: 30px;
+ 		padding-top: 10px;
+ 	}
  }
 
  .plan__diagram-subtitle {
@@ -140,6 +220,10 @@
  	line-height: 24px;
  	text-transform: uppercase;
  	color: #FFFFFF;
+
+ 	@media(max-width:400px) {
+ 		font-size: 7px;
+ 	}
  }
 
  .plan__info-title {
@@ -149,12 +233,22 @@
  	font-size: 20px;
  	line-height: 26px;
  	color: #FFFFFF;
+ 	padding-bottom: 30px;
+
+ 	@media(max-width:770px) {
+ 		text-align: center;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		max-width: 500px;
+ 	}
  }
 
  .plan__info-wrapp {
  	position: relative;
  	isolation: isolate;
  	width: 115px;
+ 	margin-top: auto;
+ 	margin-bottom: 0;
  	margin-left: auto;
  	margin-right: auto;
 
@@ -166,14 +260,41 @@
  	}
  }
 
+
+
  .plan__info-inner {
  	position: absolute;
  	left: 0;
  	top: 0;
+ 	width: fit-content;
+ }
+
+ .plan__info-inner-1 {
+ 	left: auto;
+ 	right: -32px;
+ 	top: 38px;
+ }
+
+ .plan__info-inner-2 {
+ 	top: 38%;
+ 	left: 0;
+ 	transform: translateX(-60%);
+ }
+
+ .plan__info-inner-3 {
+ 	left: auto;
+ 	right: -40px;
+ 	top: 57%;
+ }
+
+ .plan__info-inner-4 {
+ 	bottom: 20%;
+ 	left: 0;
+ 	top: auto;
+ 	transform: translateX(-70%);
  }
 
  .plan__info-box {
-
  	font-family: 'Jost';
  	font-style: normal;
  	font-weight: 500;
@@ -182,11 +303,127 @@
  	text-align: center;
  	letter-spacing: -0.01em;
  	text-transform: uppercase;
-
  	color: #FFFFFF;
 
+ 	width: fit-content;
  	background: #161335;
  	padding: 4px 5px;
+ }
 
+ .plan__right-title {
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 600;
+ 	font-size: 25px;
+ 	line-height: 30px;
+ 	color: #161335;
 
+ 	@media($laptop) {
+ 		text-align: center;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		max-width: 500px;
+ 	}
+
+ 	@media($mobile) {
+ 		font-size: 23px;
+ 		line-height: 27px;
+ 	}
+ }
+
+ .red {
+ 	color: #BA242F;
+ }
+
+ .plan__right-text {
+ 	padding-top: 14px;
+ 	max-width: 255px;
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 400;
+ 	font-size: 14px;
+ 	line-height: 20px;
+
+ 	@media($laptop) {
+ 		text-align: center;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 	}
+ }
+
+ .plan__btn {
+ 	padding-left: 10px;
+ 	padding-right: 10px;
+ 	margin-top: 30px;
+ 	width: 100%;
+ 	font-size: 16px;
+
+ 	@media($laptop) {
+ 		max-width: 350px;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 	}
+ }
+
+ .plan__right-footer-text {
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 400;
+ 	font-size: 17px;
+ 	line-height: 23px;
+ 	color: #000000;
+ }
+
+ .plan__right-footer-subtitle {
+
+ 	font-family: 'Jost';
+ 	font-style: normal;
+ 	font-weight: 600;
+ 	font-size: 20px;
+ 	line-height: 37px;
+
+ 	color: #7C9F24;
+ }
+
+ .plan__right-footer {
+ 	margin-top: 30px;
+ 	display: flex;
+ 	justify-content: space-between;
+ 	gap: 15px;
+ 	padding-right: 15px;
+
+ 	@media($laptop) {
+ 		justify-content: center;
+ 		padding-right: 0;
+ 	}
+ }
+
+ .plan__right-footer-coll {
+ 	@media($laptop) {
+ 		max-width: 230px;
+ 		margin-left: 18px;
+ 	}
+ }
+
+ .plan__right-footer-img {
+ 	margin-top: -10px;
+
+ }
+
+ .plan__right-head {
+ 	margin-top: 30px;
+
+ 	.main__right-img {
+ 		border: 2px solid rgba(255, 255, 255, 0.77);
+ 	}
+
+ 	@media($laptop) {
+ 		justify-content: center;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 	}
+
+ 	@media($mobile) {
+ 		margin-top: 25px;
+ 	}
  }

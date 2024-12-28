@@ -212,7 +212,7 @@ if (reviewsRightPanel && reviewsTriger) {
 }
 
 // diagram animatin
-const trigerStartPlan = document.querySelector(".plan");
+const trigerStartPlan = document.querySelector(".plan__diagram");
 const blockAnimLine = document.querySelector(".plan-control-visible-line");
 const planBoxes = document.querySelectorAll(".plan__info-box");
 
@@ -220,7 +220,7 @@ if (trigerStartPlan && planBoxes && blockAnimLine) {
 	// Настройка ScrollTrigger
 	const optionTriger = {
 		trigger: trigerStartPlan,
-		start: "top 10%",
+		start: "top 50%",
 	};
 
 	// Анимация линии
@@ -231,7 +231,7 @@ if (trigerStartPlan && planBoxes && blockAnimLine) {
 		},
 		{
 			width: "0%",
-			duration: 9,
+			duration: 6,
 			scrollTrigger: optionTriger,
 		}
 	);
@@ -250,7 +250,7 @@ if (trigerStartPlan && planBoxes && blockAnimLine) {
 		timeLine.fromTo(
 			box,
 			{ opacity: 0, y: 20 },
-			{ opacity: 1, y: 0, duration: 1, ease: "power1.out" }
+			{ opacity: 1, y: 0, duration: 0.7, ease: "power1.out" }
 		);
 
 		// Анимация чисел после появления блока
@@ -259,7 +259,7 @@ if (trigerStartPlan && planBoxes && blockAnimLine) {
 			{ innerText: 0 },
 			{
 				innerText: targetValue,
-				duration: 1,
+				duration: 0.7,
 				ease: "power1.out",
 				snap: { innerText: 1 },
 				onUpdate: function () {
