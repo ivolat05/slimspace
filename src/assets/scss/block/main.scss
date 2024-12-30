@@ -244,15 +244,7 @@
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			background: #D83C48;
 
-			path {
-				stroke: #fff;
-			}
-		}
-	}
 }
 
 .main__right-head {
@@ -394,6 +386,7 @@
 		top: 50%;
 		background: url("../../assets/img/main/circle.png") no-repeat center center/contain;
 		transform: translate(-50%, -50%);
+		z-index: -1;
 	}
 
 	&::before {

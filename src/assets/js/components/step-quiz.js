@@ -6,14 +6,16 @@ function stepQuiz() {
 	const stepInputAll = document.querySelectorAll(".step__quest-input");
 	//const step = document.querySelector(".header");
 	//const step = document.querySelector(".step__list-head-title");
-	const step = document.querySelector(".step__list-head-title");
+	const step = document.querySelectorAll(".step__list-head-title");
 	let count = 0;
 	if (btnControllStep) {
 		btnControllStep.forEach((btn) => {
 			btn.addEventListener("click", () => {
-				step.scrollIntoView({
-					behavior: "auto",
-					block: "start",
+				step.forEach((step) => {
+					step.scrollIntoView({
+						behavior: "auto",
+						block: "start",
+					});
 				});
 				if (btn.classList.contains("step__btn-next")) {
 					count += 1;
@@ -46,9 +48,11 @@ function stepQuiz() {
 				btnNext.removeAttribute("disabled");
 
 				if (input.type === "radio") {
-					step.scrollIntoView({
-						behavior: "auto",
-						block: "start",
+					step.forEach((step) => {
+						step.scrollIntoView({
+							behavior: "auto",
+							block: "start",
+						});
 					});
 					count += 1;
 					nextStep(count);

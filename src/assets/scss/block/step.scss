@@ -1,9 +1,20 @@
 .step__list-head {
 	padding-bottom: 115px;
+	padding-top: 250px;
 
 	@media($tablet) {
+		padding-top: 100px;
 		padding-bottom: 85px;
 	}
+
+	@media($mobile) {
+		padding-top: 50px;
+	}
+
+}
+
+.step__list-head-title {
+	padding-top: 50px;
 
 }
 
@@ -217,22 +228,7 @@
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			.step__poll-icon {
-				mix-blend-mode: normal;
-				box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.08);
-			}
 
-			.step__poll-contaienr-row {
-				color: #131704;
-
-				&::before {
-					background: url("../../assets/img/step/heart.svg") no-repeat center center/contain;
-				}
-			}
-		}
-	}
 
 }
 
@@ -292,11 +288,6 @@ input:checked~.step__poll-container {
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			filter: drop-shadow(0px 0px 4px rgba(118, 156, 48, 0.4));
-		}
-	}
 
 }
 
@@ -309,11 +300,7 @@ input:checked~.step__poll-container {
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			filter: drop-shadow(0px 0px 4px rgba(226, 82, 82, 0.4));
-		}
-	}
+
 }
 
 .step__present {
@@ -508,16 +495,7 @@ input:checked~.step__poll-container {
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			color: #131704;
-			border-color: #A2A8BA;
 
-			&::before {
-				background: url("../../assets/img/step/heart.svg") no-repeat center center/contain;
-			}
-		}
-	}
 }
 
 input:checked+.step__quest-span {
@@ -601,21 +579,7 @@ input:checked+.step__quest-span {
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			border-color: #A2A8BA;
 
-			.step__cart-text {
-				color: #131704;
-			}
-
-			.step__cart-icon {
-				path {
-					fill: #87A935;
-				}
-			}
-		}
-	}
 }
 
 .step__cart-label {

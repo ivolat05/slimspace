@@ -99,11 +99,7 @@
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			color: #D83C48;
-		}
-	}
+
 }
 
 
@@ -234,12 +230,6 @@
 
 		@media(hover:hover) {
 			&:hover {
-				background: #161335;
-			}
-		}
-
-		@media(hover:none) {
-			&:active {
 				background: #161335;
 			}
 		}

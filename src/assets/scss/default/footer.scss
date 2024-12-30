@@ -83,11 +83,7 @@
 			}
 		}
 
-		@media(hover:none) {
-			&:active {
-				color: #393A32;
-			}
-		}
+
 	}
 
 	@media($mobile) {
@@ -115,11 +111,7 @@
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			color: #D83C48;
-		}
-	}
+
 }
 
 .footer__wrapp-text {

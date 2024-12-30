@@ -438,11 +438,7 @@
 			}
 		}
 
-		@media(hover:none) {
-			&:active {
-				color: #D83C48;
-			}
-		}
+
 	}
 
 	a {
@@ -530,13 +526,7 @@ input:checked+.form__list-input-span::after {
 		}
 	}
 
-	@media(hover:none) {
-		&:active {
-			path {
-				fill: #D83C48;
-			}
-		}
-	}
+
 
 }
 
