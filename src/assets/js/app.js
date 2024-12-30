@@ -22,4 +22,9 @@
 --include("components/validation.js")
 --include("components/rezet-input.js")
 
- 
+--include("components/scroll-block.js")
+--include("components/analise-animate.js")
+--include("components/calculations.js")
+--include("components/dataCollectionQuiz.js")
+--include("components/parameters-validate.js")
+--include("components/step-quiz.js")
