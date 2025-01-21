@@ -300,6 +300,8 @@
 }
 
 .form__timer-box {
+	padding-top: 100px;
+
 	@media($mobile) {
 		padding-top: 30px;
 	}
@@ -490,6 +492,26 @@ input:checked+.form__list-input-span::after {
 		bottom: -20px;
 		left: 0;
 		width: 100%;
+	}
+
+	@media($mobile) {
+		.error {
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 100%;
+		}
+
+		.form__input-input.just-validate-error-field {
+			margin-bottom: 15px;
+
+
+		}
+
+		.form__input-input.just-validate-error-field~.form__input-btn {
+			top: calc(50% - 7.5px);
+		}
+
 	}
 }
 

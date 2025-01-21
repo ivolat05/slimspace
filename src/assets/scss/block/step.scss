@@ -16,6 +16,11 @@
 .step__list-head-title {
 	padding-top: 50px;
 
+	@media($mobile) {
+		padding-top: 20px;
+		margin-top: 30px;
+	}
+
 }
 
 .step__list-head-text {
