@@ -142,10 +142,6 @@ function calculateFinalWeight(currentWeight, desiredWeight) {
 	const finalWeight =
 		reducedWeight < desiredWeight ? desiredWeight : reducedWeight;
 
-	const pointer = document.querySelector(".rotate");
-	if (pointer) {
-		pointer.style.transform = `rotate(${(finalWeight / 300) * 360}deg)`;
-	}
 	if (weightInfo && finalWeight) {
 		weightInfo.innerHTML =
 			finalWeight % 1 === 0
@@ -200,6 +196,8 @@ function renderCalculations(quizData) {
 
 			// расчет рекомендуемого количества воды
 			recommendedAmountWater(currentWeight);
+			// отображение веса на картинке
+			calculateFinalWeight(currentWeight, desiredWeight);
 		} catch (error) {
 			console.error(
 				"Ошибка в функции renderCalculations:",
